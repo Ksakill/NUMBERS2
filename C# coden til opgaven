@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Million_dice
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Random random = new Random();
+            
+            string pathname = "C:\\Users\\Kris243q\\Desktop\\Dots.txt";
+
+            for (int i = 0; i < 1000000; i++) 
+            {
+                
+                
+                string number = i + "." + random.Next(0,10000) + "\n";
+                File.AppendAllText(pathname, number);
+                Console.WriteLine(number);
+            }
+            Console.ReadKey();
+
+        }
+    }
+}
